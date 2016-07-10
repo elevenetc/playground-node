@@ -1,6 +1,5 @@
 const electron = require('electron')
-//const exec = require('child_process').exec;
-const pbcopyProc = require('child_process').spawn('pbcopy');
+const ncp = require('copy-paste');
 const app = electron.app
 const BrowserWindow = electron.BrowserWindow
 let win;
@@ -19,9 +18,6 @@ app.on('ready', createWindow);
 
 app.on('window-all-closed', () => {
 	app.quit();
-  // if (process.platform !== 'darwin') {
-  //   app.quit();
-  // }
 });
 
 app.on('activate', () => {
@@ -30,11 +26,13 @@ app.on('activate', () => {
   }
 });
 
-function pbcopy(data) { 
-	pbcopyProc.stdin.write(data);
-	pbcopyProc.stdin.end(); 
-}
+var currentBuffer = null;
 
-console.log('writing>');
-pbcopy('xxx-ddd')
-console.log('end writing>');
+setInterval(function(){
+	var buff = ncp.paste();
+	if(currentBuffer !== buff){
+		currentBuffer = buff;
+		console.log('buffer updated:' + currentBuffer);	
+	}
+	
+}, 1000);
