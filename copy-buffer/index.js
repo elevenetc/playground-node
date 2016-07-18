@@ -5,13 +5,13 @@ const BrowserWindow = electron.BrowserWindow
 let win;
 
 function createWindow() {
-  win = new BrowserWindow({width: 800, height: 600});
-  win.loadURL(`file://${__dirname}/index.html`);
-  //win.webContents.openDevTools();
+	win = new BrowserWindow({width: 800, height: 600});
+	win.loadURL(`file://${__dirname}/index.html`);
+	//win.webContents.openDevTools();
 
-  win.on('closed', () => {
-    win = null;
-  });
+	win.on('closed', () => {
+		win = null;
+	});
 }
 
 app.on('ready', createWindow);
@@ -21,18 +21,17 @@ app.on('window-all-closed', () => {
 });
 
 app.on('activate', () => {
-  if (win === null) {
-    createWindow();
-  }
+	if (win === null) {
+		createWindow();
+	}
 });
 
 var currentBuffer = null;
 
-setInterval(function(){
+setInterval(function () {
 	var buff = ncp.paste();
-	if(currentBuffer !== buff){
+	if (currentBuffer !== buff) {
 		currentBuffer = buff;
-		console.log('buffer updated:' + currentBuffer);	
+		console.log('buffer updated:' + currentBuffer);
 	}
-	
 }, 1000);
