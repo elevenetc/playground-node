@@ -11,8 +11,8 @@ function run() {
 	});
 
 	// Set up the sender with you API key, prepare your recipients' registration tokens.
-	var sender = new gcm.Sender('YOUR_API_KEY_HERE');
-	var regTokens = ['YOUR_REG_TOKEN_HERE'];
+	var sender = new gcm.Sender('743596259723');
+	var regTokens = ['dAW5eBptUpk:APA91bF337tn_U0VsSZ1EcCbe7lOIaFynAu8Mx6mFxthURX4EHSovDUbU9AUKFQ-_lkkxMd8eO1xiC2tx0B-lG3mtpKhJh5yqpEI5-hOmOZtzk9yLEYUTuUdNRGWV7kCCFVWeBzZpknJ'];
 
 	sender.send(message, {registrationTokens: regTokens}, function (err, response) {
 		if (err) {
