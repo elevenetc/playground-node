@@ -1,3 +1,4 @@
 *.DS_Store
 .idea/
 /gcm-sample/node_modules/
+/gcm-sample/local-settings.js
