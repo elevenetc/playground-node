@@ -2,3 +2,4 @@
 .idea/
 /gcm-sample/node_modules/
 /gcm-sample/local-settings.js
+/node_modules/
