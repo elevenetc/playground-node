@@ -3,3 +3,6 @@
 /gcm-sample/node_modules/
 /node_modules/
 local-settings.js
+/playground-node.ipr
+/playground-node.iml
+/playground-node.iws
