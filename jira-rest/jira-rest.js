@@ -16,7 +16,7 @@ class JiraRest {
 	getHours() {
 
 		request({
-			url: this.jiraEnpoint + 'rest/tempo-timesheets/3/worklogs/?username=eugene.levenetc&dateFrom=2016-06-01&dateTo=2016-06-01',
+			url: this.jiraEnpoint + 'rest/tempo-timesheets/3/worklogs/?username=' + this.username + '&dateFrom=2016-06-01&dateTo=2016-06-01',
 			method: 'GET',
 			followRedirect: true,
 			headers: {
