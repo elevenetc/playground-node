@@ -1,6 +1,6 @@
 *.DS_Store
 .idea/
-/gcm-sample/node_modules/
+/src/gcm-sample/node_modules/
 /node_modules/
 local-settings.js
 /playground-node.ipr
